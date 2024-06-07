@@ -64,9 +64,9 @@ app.post('/imageurl', (req, res) => {
 // bcrypt.compare("veggies", hash, function(err, res) {
 //     // res = false
 // });
-
-app.listen(2000, () => {
-  console.log("app running: port 2000");
+const PORT = process.env.PORT
+app.listen(PORT || 3000, () => {
+  console.log(`App running: port ${PORT}`);
 });
 
 // --> res = this is woeking
