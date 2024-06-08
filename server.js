@@ -19,12 +19,6 @@ const db = knex({
   debug: true,
 });
 
-db.select("*")
-  .from("users")
-  .then((data) => {
-    // console.log(data);
-  });
-
 const app = express();
 app.use(express.json());
 app.use(cors());
