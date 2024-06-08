@@ -1,4 +1,4 @@
-function handelProfileGet (req, res, db) {
+function handleProfileGet (req, res, db) {
     const { id } = req.params;
   
     db.select("*").from("users").where({id})
@@ -12,5 +12,5 @@ function handelProfileGet (req, res, db) {
 }
 
 module.exports = {
-    handelProfileGet: handelProfileGet
+    handleProfileGet: handleProfileGet
 }

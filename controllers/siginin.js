@@ -1,4 +1,4 @@
-function handelSignin(req, res, db, bcrypt) {
+function handleSignin(req, res, db, bcrypt) {
   const { email, password } = req.body
     if(!email || !password) {
     return res.status(400).json('incorrect from submission')
@@ -22,5 +22,5 @@ function handelSignin(req, res, db, bcrypt) {
 }
 
 module.exports = {
-  handelSignin: handelSignin
+  handleSignin: handleSignin
 }

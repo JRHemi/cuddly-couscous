@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 app.post("/signin", (req, res) => {
-  signin.handelSignin(req, res, db, bcrypt);
+  signin.handleSignin(req, res, db, bcrypt);
 });
 
 app.post("/register", (req, res) => {
@@ -36,11 +36,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/profile/:id", (req, res) => {
-  profile.handelProfileGet(req, res, db);
+  profile.handleProfileGet(req, res, db);
 });
 
 app.put("/image", (req, res) => {
-  image.handelImage(req, res, db);
+  image.handleImage(req, res, db);
 });
 
 app.post('/imageurl', (req, res) => { 

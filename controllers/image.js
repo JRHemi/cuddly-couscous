@@ -1,10 +1,10 @@
 const { response } = require("express");
 
 // Your PAT (Personal Access Token) can be found in the Account's Security section
-const PAT = "31fd86546c2840d7be640335fdb769ed";
+const PAT = process.env.API_PAT;
 // Specify the correct user_id/app_id pairings
 // Since you're making inferences outside your app's scope
-const USER_ID = "w6yvkdx93ko7";
+const USER_ID = process.env.API_USER;
 const APP_ID = "Face-recognition";
 // Change these to whatever model and image URL you want to use
 const MODEL_ID = "face-detection";
@@ -60,7 +60,7 @@ function handleApiCall (req, res) {
 
 
 
-function handelImage (req, res, db)  {
+function handleImage (req, res, db)  {
     const { id } = req.body;
     db("users")
       .where("id", "=", id)
@@ -74,6 +74,6 @@ function handelImage (req, res, db)  {
   };
 
   module.exports = {
-    handelImage: handelImage,
+    handleImage: handleImage,
     handleApiCall: handleApiCall
   }
