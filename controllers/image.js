@@ -61,10 +61,10 @@ function handleApiCall (req, res) {
 
 
 function handlepImage (req, res, db)  {
-    const { id } = req.body;
+    const { id, newEntries } = req.body;
     db("users")
       .where("id", "=", id)
-      .increment("entries", req.body.newEntries)
+      .increment("entries", newEntries)
       .returning("entries")
       .then((entries) => {
         console.log(entries[0].entries);
