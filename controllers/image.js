@@ -52,7 +52,6 @@ function handleApiCall (req, res) {
   )
   .then(response => response.json())
   .then(data => {
-    console.log(data)
     res.json(data);
   })
   .catch(err => res.status(400).json('unable to work with api'))
@@ -62,12 +61,12 @@ function handleApiCall (req, res) {
 
 function handlepImage (req, res, db)  {
     const { id, newEntries } = req.body;
+    console.log(newEntries);
     db("users")
       .where("id", "=", id)
       .increment("entries", newEntries)
       .returning("entries")
       .then((entries) => {
-        console.log(entries[0].entries);
         res.json(entries[0].entries);
       })
       .catch((err) => res.status(400).json("unable to get entry count"));
