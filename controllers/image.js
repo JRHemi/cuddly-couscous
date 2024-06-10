@@ -59,9 +59,8 @@ function handleApiCall (req, res) {
 
 
 
-function handlepImage (req, res, db)  {
-    const { id, newEntries } = req.body;
-    console.log(newEntries);
+function handleImage (req, res, db)  {
+    const { id, newEntries } = req.body;+
     db("users")
       .where("id", "=", id)
       .increment("entries", newEntries)
@@ -73,6 +72,6 @@ function handlepImage (req, res, db)  {
   };
 
   module.exports = {
-    handleImage: handlepImage,
+    handleImage: handleImage,
     handleApiCall: handleApiCall
   }
