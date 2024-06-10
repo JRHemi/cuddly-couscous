@@ -74,6 +74,6 @@ function handlepImage (req, res, db)  {
   };
 
   module.exports = {
-    handlepImage: handlepImage,
+    handleImage: handlepImage,
     handleApiCall: handleApiCall
   }
