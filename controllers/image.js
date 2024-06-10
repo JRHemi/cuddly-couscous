@@ -60,11 +60,11 @@ function handleApiCall (req, res) {
 
 
 
-function handleImage (req, res, db)  {
+function handlepImage (req, res, db)  {
     const { id } = req.body;
     db("users")
       .where("id", "=", id)
-      .increment("entries", 1)
+      .increment("entries", req.body.newEntries)
       .returning("entries")
       .then((entries) => {
         console.log(entries[0].entries);
@@ -74,6 +74,6 @@ function handleImage (req, res, db)  {
   };
 
   module.exports = {
-    handleImage: handleImage,
+    handlepImage: handlepImage,
     handleApiCall: handleApiCall
   }
