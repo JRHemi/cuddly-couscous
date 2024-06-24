@@ -1,6 +1,3 @@
-//alternative option for syntax using advanced functions
-
-
 function handleRegister (req, res, db, bcrypt) {
     const { email, username, password } = req.body;
     if (!email || !username || !password) {

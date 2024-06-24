@@ -57,8 +57,6 @@ function handleApiCall (req, res) {
   .catch(err => res.status(400).json('unable to work with api'))
 }
 
-
-
 function handleImage (req, res, db)  {
     const { id, newEntries } = req.body;
     console.log(newEntries)

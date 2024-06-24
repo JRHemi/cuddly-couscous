@@ -47,24 +47,8 @@ app.post('/imageurl', (req, res) => {
   image.handleApiCall(req, res);
 });
 
-// bcrypt.hash("bacon", null, null, function (err, hash) {
-//   // Store hash in your password DB.
-// });
-
-// // Load hash from your password DB.
-// bcrypt.compare("bacon", hash, function(err, res) {
-//     // res == true
-// });
-// bcrypt.compare("veggies", hash, function(err, res) {
-//     // res = false
-// });
 const PORT = process.env.PORT
 app.listen(PORT || 3000, () => {
   console.log(`App running: port ${PORT}`);
 });
 
-// --> res = this is woeking
-// signin --> POST = success/fail
-// register --> POST = user
-// profile/:userId --> GET = user info
-// image --> PUT --> user
